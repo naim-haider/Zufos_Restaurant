@@ -1,7 +1,10 @@
 import React from "react";
 import AnimatedText from "./AnimatedText";
 
-const Hero = () => {
+const Hero = ({ menuRef }) => {
+  const scrollToMenu = () => {
+    menuRef?.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <section
@@ -79,8 +82,8 @@ const Hero = () => {
 
             <div className="mt-8 text-right">
               <a
-                href="#menus"
-                className="text-[#ebdfd4] border-b border-[#ebdfd4] text-lg hover:opacity-80 transition font-serif"
+                onClick={scrollToMenu}
+                className="text-[#ebdfd4] cursor-pointer border-b border-[#ebdfd4] text-lg hover:opacity-80 transition font-serif"
               >
                 View Our Menu
               </a>

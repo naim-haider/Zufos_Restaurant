@@ -1,26 +1,30 @@
 import React, { useEffect } from "react";
-import Hero from "./components/Hero";
-import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { DragCards } from "./components/DragCard";
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
+import OrderPage from "./pages/OrderPage";
+import ReservationsPage from "./pages/ReservationsPage";
 import Menu from "./components/Menu";
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration in ms
-      once: true, // animation only happens once
+      duration: 1000,
+      once: true,
     });
   }, []);
 
   return (
-    <div className="font-body text-gray-800">
-      <Header />
-      <Hero />
-      <DragCards />
-      <Menu />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+
+        <Route path="/order" element={<OrderPage />} />
+        <Route path="/reservation" element={<ReservationsPage />} />
+      </Routes>
+    </>
   );
 }
 

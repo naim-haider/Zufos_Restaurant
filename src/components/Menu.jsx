@@ -1,12 +1,13 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import AnimatedText from "./AnimatedText";
+import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = forwardRef((props, ref) => {
   const MenuCards = [
     {
       name: "Happy Hour",
       description:
-        "Experience vibrant evenings with our Happy Hour menu-featuring flavorful bites, handcrafted cocktails, and refreshing drinks at special prices. Perfect for relaxing, socializing, and savoring bold tastes in style.",
+        "Experience vibrant evenings with our Happy Hour menu—featuring flavorful bites, handcrafted cocktails, and refreshing drinks at special prices. Perfect for relaxing, socializing, and savoring bold tastes in style.",
       img: "https://adachirestaurant.com/wp-content/uploads/2020/11/adachi-happy-hour-min.jpg",
     },
     {
@@ -39,91 +40,74 @@ const Menu = () => {
     { href: "#", label: "Home" },
     { href: "#", label: "About" },
     { href: "#", label: "Gallery" },
-    {
-      href: "https://order.adachirestaurant.com/gift-card/",
-      label: "Gift Cards",
-      external: true,
-    },
+    { href: "#", label: "Gift Cards", external: true },
     { href: "#", label: "Catering" },
-    {
-      href: "https://order.adachirestaurant.com/?openSignup=true",
-      label: "Order",
-      external: true,
-    },
+    { href: "#", label: "Order", external: true },
     { href: "#", label: "Contact" },
   ];
 
-  const hours = [
-    "Sunday - Thursday: 11:30am - 11pm",
-    "Friday & Saturday: 11:30am - 12am",
-    "Christmas Eve: 11:30am - 4pm",
-    "Christmas Day: Closed | New Year's Day: Closed",
-  ];
   return (
     <section
+      ref={ref}
       data-aos="fade-right"
       className="relative -top-38 h-screen text-[#ebdfd4]"
     >
       <div className="flex items-center justify-center relative z-10">
-        <div>
-          <AnimatedText
-            text="Explore Our Menu"
-            tag="p"
-            className="text-3xl md:text-8xl xl:text-[12rem] font-serif"
-          />
-        </div>
+        <AnimatedText
+          text="Explore Our Menu"
+          tag="p"
+          className="text-3xl md:text-8xl xl:text-[12rem] font-serif"
+        />
       </div>
 
       <section data-aos="fade-right" className="lg:px-20 md:px-10 px-5">
         <div className="mx-auto flex justify-center object-center px-4 lg:max-w-screen">
-          <div className="flex justify-center object-center flex-col">
-            <div className="grid gap-5 pt-10 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-              {MenuCards.map((card, index) => (
-                <a
-                  key={card.img}
-                  href="#"
-                  className={`group flex justify-center [perspective:1000px] 
-                         transition-transform duration-500  ${
-                           index % 2 === 0
-                             ? "-translate-y-6 animate-float"
-                             : "translate-y-6 animate-float-delay"
-                         }`}
-                >
-                  <div className="relative lg:h-[600px] lg:w-64 md:h-[365px] md:64 sm:h-[365px] sm:w-60 h-[450px] w-[300px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                    {/* Front Face */}
-                    <div className="absolute inset-0 h-full w-full rounded-xl [backface-visibility:hidden]">
-                      <img
-                        className="object-cover cursor-pointer object-left h-full w-full rounded-xl"
-                        src={card.img}
-                        alt="Service 1 Heading"
-                        width={250}
-                        height={250}
-                      />
-                    </div>
-                    <div className="absolute rounded-xl inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-blue/70" />
-                    <div className="absolute inset-0 top-[29rem] px-8 text-center">
-                      <p className="font-dmserif text-xl text-[#ebdfd4] font-serif">
-                        {card.name}
+          <div className="grid gap-5 pt-10 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+            {MenuCards.map((card, index) => (
+              <a
+                key={card.img}
+                href="#"
+                className={`group flex justify-center [perspective:1000px] 
+                  transition-transform duration-500 ${
+                    index % 2 === 0
+                      ? "-translate-y-6 animate-float"
+                      : "translate-y-6 animate-float-delay"
+                  }`}
+              >
+                <div className="relative lg:h-[600px] lg:w-64 md:h-[365px] md:64 sm:h-[365px] sm:w-60 h-[450px] w-[300px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front */}
+                  <div className="absolute inset-0 h-full w-full rounded-xl [backface-visibility:hidden]">
+                    <img
+                      className="object-cover cursor-pointer object-left h-full w-full rounded-xl"
+                      src={card.img}
+                      alt={card.name}
+                      width={250}
+                      height={250}
+                    />
+                  </div>
+
+                  <div className="absolute rounded-xl inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-blue/70" />
+                  <div className="absolute inset-0 top-[29rem] px-8 text-center">
+                    <p className="font-dmserif text-xl text-[#ebdfd4] font-serif">
+                      {card.name}
+                    </p>
+                  </div>
+
+                  {/* Back */}
+                  <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-5 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <div className="flex min-h-full flex-col items-center justify-center">
+                      <h2 className="text-xl font-bold mb-4">{card.name}</h2>
+                      <p className="text-lg text-pretty text-center mb-4">
+                        {card.description}
+                      </p>
+                      <p className="text-xl text-[#ebdfd4] font-serif border-b border-[#ebdfd4] hover:opacity-80 transition">
+                        Read More
                       </p>
                     </div>
-                    {/* Back Face */}
-                    <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-5 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                      <div className="flex min-h-full flex-col items-center justify-center">
-                        <h2 className="text-xl font-bold mb-4">{card.name}</h2>
-                        <p className="text-lg text-pretty text-center mb-4">
-                          {card.description}
-                        </p>
-                        <div className="inline-flex">
-                          <p className="text-xl text-[#ebdfd4] font-serif border-b border-[#ebdfd4] hover:opacity-80 transition">
-                            Read More
-                          </p>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </a>
-              ))}
-            </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -151,7 +135,7 @@ const Menu = () => {
             </ul>
 
             <div className="mb-6 space-y-4 md:flex md:justify-around md:items-center md:space-x-6 md:space-y-0">
-              <div className="font-serif  text-xl">
+              <div className="font-serif text-xl">
                 <span>5 Linking Road</span>
                 <span className="mx-2">|</span>
                 <span>Mumbai, Maharashtra 400050</span>
@@ -160,22 +144,22 @@ const Menu = () => {
               </div>
 
               <div className="space-x-4">
-                <a
-                  href="https://order.adachirestaurant.com/?openSignup=true"
+                <Link
+                  to="/order"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-transparent text-[#ebdfd4] px-24 py-4 border-[1px] border-[#ebdfd4] font-serif transition-all duration-300 ease-in-out hover:bg-[#ebdfd4] hover:text-[#021e20]"
                 >
                   Order
-                </a>
-                <a
-                  href="https://resy.com/cities/det/adachi"
+                </Link>
+                <Link
+                  to="/reservation"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-transparent text-[#ebdfd4] px-24 py-4 border-[1px] border-[#ebdfd4] font-serif transition-all duration-300 ease-in-out hover:bg-[#ebdfd4] hover:text-[#021e20]"
                 >
                   Reserve
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -202,6 +186,6 @@ const Menu = () => {
       </footer>
     </section>
   );
-};
+});
 
 export default Menu;

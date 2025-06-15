@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,10 +41,12 @@ const Header = () => {
           <div className="px-5 xl:px-12 py-6 font-serif cursor-pointer text-xl text-[#ebdfd4] border-[#ebdfd4] p-4 mb-4 border-[1px] mr-5 w-[30%] flex justify-center items-center">
             <div className="flex w-full text-center">
               <div className="w-1/2 border-r border-[#ebdfd4] flex justify-center items-center">
-                <p>Order Online</p>
+                <Link to={"/order"}>Order Online</Link>
               </div>
               <div className="w-1/2 flex justify-center items-center">
-                <p>Reservations</p>
+                <Link to={"/reservation"}>
+                  <p>Reservations</p>
+                </Link>
               </div>
             </div>
           </div>
