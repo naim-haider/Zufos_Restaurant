@@ -14,23 +14,19 @@ const OrderPage = () => {
             <Link to={"/"}>
               <div className="px-5 xl:px-12 py-6">
                 <div
-                  className={`font-lavish transition-all duration-500 ease-in-out text-5xl
-                    }`}
+                  className={`font-lavish transition-all duration-500 ease-in-out text-5xl text-[#ebdfd4]`}
                 >
                   Zufos
                 </div>
               </div>
             </Link>
-            <div className="px-5  py-6 font-serif cursor-pointer text-xl text-[#ebdfd4] border-[#ebdfd4] p-4 border-[1px] mr-5 w-[30%] flex justify-center items-center">
-              <div className="flex w-screen text-center">
-                <div className="w-1/2 border-r border-[#ebdfd4] flex justify-center items-center">
-                  <Link to={"/order"}>Order Online</Link>
-                </div>
-                <div className="w-1/2 flex justify-center items-center">
-                  <Link to={"/reservation"}>
-                    <p>Reservations</p>
-                  </Link>
-                </div>
+            <div className="px-5 py-6 font-serif cursor-pointer text-xl text-[#ebdfd4] border-[#ebdfd4] p-4 border-[1px] mr-5 w-[30%] flex justify-center items-center">
+              <div className="flex w-screen justify-evenly items-center space-x-4 text-center">
+                <Link to={"/order"}>Order Online</Link>
+                <span className="text-2xl">&</span>
+                <Link to={"/reservation"}>
+                  <p>Reservations</p>
+                </Link>
               </div>
             </div>
           </nav>

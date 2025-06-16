@@ -146,7 +146,6 @@ const Menu = forwardRef((props, ref) => {
               <div className="space-x-4">
                 <Link
                   to="/order"
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-transparent text-[#ebdfd4] px-24 py-4 border-[1px] border-[#ebdfd4] font-serif transition-all duration-300 ease-in-out hover:bg-[#ebdfd4] hover:text-[#021e20]"
                 >
@@ -154,7 +153,6 @@ const Menu = forwardRef((props, ref) => {
                 </Link>
                 <Link
                   to="/reservation"
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-transparent text-[#ebdfd4] px-24 py-4 border-[1px] border-[#ebdfd4] font-serif transition-all duration-300 ease-in-out hover:bg-[#ebdfd4] hover:text-[#021e20]"
                 >
