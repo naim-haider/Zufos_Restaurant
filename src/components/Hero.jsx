@@ -9,19 +9,19 @@ const Hero = ({ menuRef }) => {
     <>
       <section
         data-aos="fade-right"
-        className="relative h-[150vh] w-full bg-black text-white"
+        className="relative xl:h-[150vh] min-h-screen w-full bg-black text-white"
       >
         <img
           src="https://adachirestaurant.com/wp-content/uploads/2020/11/home-hero-scaled.jpg"
-          alt="Adachi Restaurant"
+          alt="Zufos Restaurant"
           className="absolute inset-0 w-full h-full object-cover opacity-100"
         />
-        <div className="relative text-[#ebdfd4] z-10 flex items-start justify-start h-full px-6 md:px-20">
-          <div className="mt-32 md:mt-48 max-w-[75%]">
+        <div className="relative text-[#ebdfd4] z-10 flex items-start justify-start h-full px-6 md:px-20 pt-32 md:pt-48 xl:pt-0">
+          <div className="mt-32 xl:mt-48 xl:w-[75%] w-full md:w-2/3 lg:w-1/2">
             <AnimatedText
               text="A HARMONY OF SPICE AND SIMPLICITY"
               tag="p"
-              className="text-2xl md:text-4xl uppercase font-thin mb-4 font-serif"
+              className="text-2xl md:text-2xl uppercase font-thin mb-4 font-serif"
             />
             <AnimatedText
               text="Cuisine from the Heaven"
@@ -35,16 +35,16 @@ const Hero = ({ menuRef }) => {
       </section>
       <section
         data-aos="fade-right"
-        className="relative -top-96 bg-[#021e20] h-screen text-[#ebdfd4] max-w-[85%] px-6 py-20 md:px-20 md:py-32 "
+        className="relative xl:-top-96 bg-[#021e20] xl:h-screen text-[#ebdfd4] xl:max-w-[85%] px-6 py-20 md:px-20 md:py-32 "
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-1 gap-12 items-start relative z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-12 items-start relative z-10">
           <div>
             <AnimatedText
               text="Our Mission"
               tag="p"
               className="text-3xl md:text-8xl font-serif font-bold mb-6 -ml-20"
             />
-            <div className="text-base md:text-lg font-light leading-relaxed flex gap-5 ml-32">
+            <div className="text-base md:text-lg font-light leading-relaxed xl:flex xl:gap-5 xl:ml-32">
               <div className="flex flex-col gap-5">
                 <p>
                   Looking for the finest Indian dining experience in Birmingham,
@@ -63,7 +63,7 @@ const Hero = ({ menuRef }) => {
                   cuisine.
                 </p>
               </div>
-              <div className="flex flex-col gap-5 ml-28">
+              <div className="flex flex-col gap-5 mt-5 xl:mt-0 xl:ml-28">
                 <p>
                   Zufos stands apart by embracing the social spirit of Indian
                   dining and combining it with a vibe-driven, upscale
@@ -80,20 +80,20 @@ const Hero = ({ menuRef }) => {
               </div>
             </div>
 
-            <div className="mt-8 text-right">
-              <a
+            <div className="xl:mt-8 xl:text-right pt-4 xl:pt-0">
+              <span
                 onClick={scrollToMenu}
-                className="text-[#ebdfd4] cursor-pointer border-b border-[#ebdfd4] text-lg hover:opacity-80 transition font-serif"
+                className="text-[#ebdfd4] inline-block xl:inline mb-5  cursor-pointer border-b border-[#ebdfd4] text-lg hover:opacity-80 transition font-serif"
               >
                 View Our Menu
-              </a>
+              </span>
             </div>
           </div>
         </div>
 
         <div
           data-aos="fade-left"
-          className="w-full h-full relative top-20 left-20"
+          className="w-full h-full xl:relative xl:top-20 xl:left-20"
         >
           <img
             src="https://adachirestaurant.com/wp-content/uploads/2020/11/home-pic-scaled.jpg"
